@@ -8,7 +8,7 @@ import * as publicFunctions from "./util/publicFunctions.js";
  *
  * @type {Partial<SupportLanguage>[]}
  */
-const languages = [
+export const languages = [
     {
         name: "melody",
         parsers: ["melody"],
@@ -28,7 +28,7 @@ const languages = [
  *
  * @type Record<string, Parser>
  */
-const parsers = {
+export const parsers = {
     melody: {
         parse,
         astFormat: "melody",
@@ -49,7 +49,7 @@ const parsers = {
  *
  * @type Record<string, Printer>
  */
-const printers = {
+export const printers = {
     melody: {
         print,
         printComment(commentPath) {
@@ -78,7 +78,7 @@ const printers = {
 };
 
 /** @type {import('prettier').Options} Options */
-const options = {
+export const options = {
     twigMultiTags: {
         type: "path",
         category: "Global",
@@ -119,19 +119,9 @@ const options = {
     }
 };
 
-const pluginExports = {
+export default {
     languages,
-    printers,
     parsers,
+    printers,
     options
 };
-const combinedExports = Object.assign(
-    {},
-    pluginExports,
-    symbols,
-    publicFunctions
-);
-
-// This exports defines the Prettier plugin
-// See https://github.com/prettier/prettier/blob/master/docs/plugins.md
-export default combinedExports;
