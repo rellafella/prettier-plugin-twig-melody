@@ -1,6 +1,7 @@
-# Prettier for Melody
+# Prettier plugin for Twig (melody)
 
-![Prettier Banner](https://raw.githubusercontent.com/prettier/prettier-logo/master/images/prettier-banner-light.png)
+![Prettier Twig Banner](./logo/wide-dark.svg#gh-dark-mode-only)
+![Prettier Twig Banner](./logo/wide-light.svg#gh-light-mode-only)
 
 ![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/zackad/prettier-plugin-twig-melody/ci.yaml?branch=master&style=for-the-badge&logo=github)
 ![GitHub License](https://img.shields.io/github/license/zackad/prettier-plugin-twig-melody?style=for-the-badge)
@@ -9,7 +10,9 @@
 
 ---
 
-This Plugin enables Prettier to format `.twig` files, as well as `.html.twig` and `.melody.twig`. [Melody](https://melody.js.org) is a component based UI framework that uses Twig as its template language.
+This Plugin enables Prettier to format `.twig` files, as well as `.html.twig` and `.melody.twig`.
+
+Originally forked from [trivago/prettier-twig-melody](https://github.com/trivago/prettier-plugin-twig-melody) this plugin aims to deliver a fully featured formattig experience for Twig documents.
 
 ## Install
 
@@ -20,7 +23,7 @@ yarn add --dev @zackad/prettier-plugin-twig-melody
 ## Use
 
 ```bash
-prettier --write "**/*.melody.twig"
+prettier --write "**/*.twig"
 ```
 
 In your editor, if the plugin is not automatically picked up and invoked (e.g., if you are using format on save, but no formatting is happening when you save), try adding the plugin explicitly in your Prettier configuration (e.g., `.prettierrc.json`) using the `plugins` key:
@@ -52,8 +55,8 @@ If set to `true`, objects will always be wrapped/broken, even if they would fit 
 ```html
 <section
     class="{{ {
-    base: css.prices
-} | classes }}"
+        base: css.prices
+    } | classes }}"
 ></section>
 ```
 
@@ -130,3 +133,7 @@ You can also tell Prettier to leave entire regions as they are:
 ## Testing
 
 -   You can call `yarn test`to test against all regular tests
+
+## Credits
+
+Special thanks to [@twbartel](https://github.com/twbartel) for creating the original `prettier-twig-melody` plugin that has been fundamental in getting this started.
